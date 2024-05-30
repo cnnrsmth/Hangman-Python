@@ -1,23 +1,52 @@
 import random
 
-favorite_fruits = ["Apple", "Banana", "Durian", "Dragonfruit", "Elderberry"]
+def get_favorite_fruits():
+    """
+    Create and return a list of favorite fruits.
+    """
+    return ["Apple", "Banana", "Durian", "Dragonfruit", "Elderberry"]
 
-# Step 2: Assign the list to a variable called word_list
-word_list = favorite_fruits
+def choose_random_word(word_list):
+    """
+    Select and return a random word from a list.
+    """
+    return random.choice(word_list)
 
-# Step 3: Print out the word_list
-print(word_list)
+def get_user_guess():
+    """
+    Prompt the user to enter a single letter and return the input.
+    """
+    return input("Enter a single letter: ")
 
-word = random.choice(word_list)
+def validate_guess(guess):
+    """
+    Check if the guess is a single alphabetical character.
+    """
+    return len(guess) == 1 and guess.isalpha()
 
-print(word)
+def main():
+    # Step 1: Create a list of favorite fruits
+    word_list = get_favorite_fruits()
 
-guess = input("Enter a single letter ")
+    # Step 2: Print the word list
+    print(word_list)
 
-# Step 1: Create an if statement to check the input
-if len(guess) == 1 and guess.isalpha():
-    # Step 2: Print a message if the input is valid
-    print("Good guess!")
-else:
-    # Step 3: Print a message if the input is not valid
-    print("Oops! That is not a valid input.")
+    # Step 3: Choose a random word from the list and print it
+    word = choose_random_word(word_list)
+    print(f"Randomly chosen word: {word}")
+
+    # Step 4: Get the user's guess
+    guess = get_user_guess()
+
+    # Step 5: Validate the guess and print appropriate message
+    if validate_guess(guess):
+        print("Good guess!")
+    else:
+        print("Oops! That is not a valid input.")
+
+#When the script is imported into another script, the condition if __name__ == "__main__": 
+# evaluates to False, and the main() function is not called. This prevents the main execution 
+# code from running and allows the script's functions, classes, and variables to be used without 
+# side effects.
+if __name__ == "__main__":
+    main()
