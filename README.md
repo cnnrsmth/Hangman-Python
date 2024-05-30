@@ -48,9 +48,9 @@ Guess the word before you run out of attempts!
 
 ## Project Structure
 
-    ```sh
-    ├── hangman.py         # Main game logic
-    ├── words.py           # Word bank for the game
-    ├── requirements.txt   # Project dependencies
-    └── README.md          # Project documentation
-    ```
+```sh
+ ├── hangman.py         # Main game logic
+ ├── words.py           # Word bank for the game
+ ├── requirements.txt   # Project dependencies
+ └── README.md          # Project documentation
+```
