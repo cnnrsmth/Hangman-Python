@@ -9,7 +9,6 @@
 - [Installation](#installation)
 - [How to Play](#how-to-play)
 - [Project Structure](#project-structure)
-- [License](#license)
 
 ## Introduction
 
@@ -59,5 +58,4 @@ Guess the word before you run out of attempts!
  ├── milestone_4.py     # Milestone 5 tasks, and 4 tweaks
  ├── milestone_5.py     # Milestone 5 tasks, and 4 tweaks
  ├── README.md          # Project documentation
- └── requirements.txt   # Project dependencies
 ```
