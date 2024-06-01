@@ -62,19 +62,27 @@ class Hangman:
         """
         return len(guess) == 1 and guess.isalpha()
 
-# Test the Hangman class
+def play_game(word_list):
+    """
+    Play the Hangman game.
+    """
+    num_lives = 5
+    game = Hangman(word_list, num_lives)
+    
+    while True:
+        if game.num_lives == 0:
+            print("You lost!")
+            break
+        elif game.num_letters > 0:
+            print(f"Word to guess: {' '.join(game.word_guessed)}")
+            game.ask_for_input()
+            print("Updated list of guesses:", game.list_of_guesses)
+            print("Updated word guessed so far:", game.word_guessed)
+            print("Updated number of lives:", game.num_lives)
+        else:
+            print("Congratulations. You won the game!")
+            break
+
 if __name__ == "__main__":
     word_list = get_favorite_fruits()
-    game = Hangman(word_list)
-
-    while game.num_lives > 0 and '_' in game.word_guessed:
-        print(f"Word to guess: {' '.join(game.word_guessed)}")
-        game.ask_for_input()
-        print("Updated list of guesses:", game.list_of_guesses)
-        print("Updated word guessed so far:", game.word_guessed)
-        print("Updated number of lives:", game.num_lives)
-
-    if game.num_lives == 0:
-        print(f"You lost! The word was: {game.word}")
-    else:
-        print(f"Congratulations! You guessed the word: {game.word}")
+    play_game(word_list)
